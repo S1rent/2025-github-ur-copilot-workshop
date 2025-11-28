@@ -13,3 +13,6 @@ __pycache__/
 # Coverage
 .coverage
 htmlcov/
+
+# Pomodoro data file
+pomodoro_data.json
