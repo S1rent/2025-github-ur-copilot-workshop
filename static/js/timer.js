@@ -31,7 +31,7 @@ function playBeep(frequency = 440, duration = 0.2, volume = 0.3) {
         oscillator.type = 'sine';
         
         gainNode.gain.setValueAtTime(volume, ctx.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+        gainNode.gain.linearRampToValueAtTime(0.01, ctx.currentTime + duration);
         
         oscillator.start(ctx.currentTime);
         oscillator.stop(ctx.currentTime + duration);
