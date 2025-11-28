@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="theme-dark">
+    <div class="container">
+        <header>
+            <h1>Pomodoro Timer</h1>
+            <button id="settingsBtn" class="settings-btn" aria-label="Settings">⚙️</button>
+        </header>
+
+        <main>
+            <!-- Timer Display -->
+            <div class="timer-container">
+                <div class="timer-display">
+                    <span id="minutes">25</span>:<span id="seconds">00</span>
+                </div>
+                <div class="timer-label" id="timerLabel">Focus Time</div>
+            </div>
+
+            <!-- Timer Controls -->
+            <div class="controls">
+                <button id="startBtn" class="btn btn-primary">Start</button>
+                <button id="pauseBtn" class="btn btn-secondary" disabled>Pause</button>
+                <button id="resetBtn" class="btn btn-secondary">Reset</button>
+            </div>
+
+            <!-- Session Counter -->
+            <div class="session-info">
+                <span id="sessionCount">Session: 1/4</span>
+            </div>
+        </main>
+
+        <!-- Settings Modal -->
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <button id="closeModal" class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Timer Duration -->
+                    <div class="setting-group">
+                        <label>Focus Duration</label>
+                        <div class="button-group" id="focusDuration">
+                            <button class="option-btn" data-value="15">15 min</button>
+                            <button class="option-btn active" data-value="25">25 min</button>
+                            <button class="option-btn" data-value="35">35 min</button>
+                            <button class="option-btn" data-value="45">45 min</button>
+                        </div>
+                    </div>
+
+                    <!-- Break Duration -->
+                    <div class="setting-group">
+                        <label>Break Duration</label>
+                        <div class="button-group" id="breakDuration">
+                            <button class="option-btn active" data-value="5">5 min</button>
+                            <button class="option-btn" data-value="10">10 min</button>
+                            <button class="option-btn" data-value="15">15 min</button>
+                        </div>
+                    </div>
+
+                    <!-- Theme Selection -->
+                    <div class="setting-group">
+                        <label>Theme</label>
+                        <div class="button-group" id="themeSelection">
+                            <button class="option-btn active" data-value="dark">Dark</button>
+                            <button class="option-btn" data-value="light">Light</button>
+                            <button class="option-btn" data-value="focus">Focus</button>
+                        </div>
+                    </div>
+
+                    <!-- Sound Settings -->
+                    <div class="setting-group">
+                        <label>Sound Settings</label>
+                        <div class="toggle-group">
+                            <div class="toggle-item">
+                                <span>Start Sound</span>
+                                <label class="toggle">
+                                    <input type="checkbox" id="startSound" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <span>End Sound</span>
+                                <label class="toggle">
+                                    <input type="checkbox" id="endSound" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <span>Ticking Sound</span>
+                                <label class="toggle">
+                                    <input type="checkbox" id="tickingSound">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+</body>
+</html>
