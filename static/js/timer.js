@@ -525,10 +525,7 @@ function init() {
     elements.progressCircle.style.strokeDasharray = CIRCLE_CIRCUMFERENCE;
 }
 
-// Initialize on DOM ready
-document.addEventListener('DOMContentLoaded', init);
-
-// Run init immediately if DOM is already loaded
+// Initialize on DOM ready or immediately if already loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {

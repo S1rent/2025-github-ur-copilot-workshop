@@ -222,7 +222,7 @@ main {
 }
 
 .progress-ring-circle {
-    stroke-dasharray: 565.48; /* 2 * PI * 90 */
+    /* Note: stroke-dasharray set dynamically via JavaScript using CIRCLE_CIRCUMFERENCE constant */
     stroke-dashoffset: 0;
     transition: stroke-dashoffset 1s linear, stroke 0.5s ease;
     filter: drop-shadow(0 0 8px currentColor);
