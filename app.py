@@ -44,14 +44,16 @@ def get_default_data():
         "last_completion_date": None,
         "achievements": [],
         "daily_completions": {},
-        "weekly_stats": {},
-        "monthly_stats": {},
         "total_focus_time_minutes": 0,
     }
 
 
 def calculate_level(xp):
-    """Calculate level based on XP. Each level requires 100 XP more than the previous."""
+    """Calculate level based on XP.
+
+    Level 1→2 requires 100 XP, and each subsequent level requires
+    50 XP more than the previous (150 for level 3, 200 for level 4, etc.).
+    """
     level = 1
     xp_needed = 100
     remaining_xp = xp
